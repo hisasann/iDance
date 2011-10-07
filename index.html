@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>iDance - Thank you Steve.</title>
+	<style type="text/css" media="screen">
+		body {
+			/*background-color: #525152;*/
+			color: #DDD;
+			overflow: hidden;
+			margin: 0px;
+		}
+	</style>
+	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/paper.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/main.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" charset="utf-8">
+	$(function() {
+		AudioDance.play();
+		
+		var thankyou = $("#thankyou");
+		var left = Math.floor(($(window).width() - thankyou.width()) / 2);
+		var top  = Math.floor(($(window).height() - thankyou.height()) / 2) + 200;
+		thankyou
+			.css({
+				position: "absolute",
+				top: top + "px",
+				left: left + "px",
+				opacity: 0,
+				zIndex: 1000
+			})
+			.show()
+			.animate({opacity: "1"},{queue: true, duration: 3000, easing: "linear", complete: function(){}});
+	});
+	</script>
+</head>
+<body>
+	<!--
+	Author: hisasann
+	SpecialThanks: ken_c_lo
+	-->
+	<canvas id="canvas" resize></canvas>
+	<img id="thankyou" src="img/thankyou.png" width="345px" height="68px" style="display:none;">
+	<img id="apple" src="img/apple.jpg" style="display:none;">
+	<img id="jobs" src="img/jobs.jpg" style="display:none;">
+</body>
+</html>
